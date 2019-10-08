@@ -13,6 +13,11 @@ properties(
     ]
 )
 node {
+      agent {
+    docker {
+      image 'node'
+      args '-p 4200:4200'
+    }
     stage('Checkout') {
         //disable to recycle workspace data to save time/bandwidth
         deleteDir()
